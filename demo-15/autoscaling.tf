@@ -8,7 +8,7 @@ resource "aws_launch_configuration" "example-launchconfig" {
 
 resource "aws_autoscaling_group" "example-autoscaling" {
   name                      = "example-autoscaling"
-  vpc_zone_identifier       = [aws_subnet.main-public-1.id, aws_subnet.main-public-2.id]
+  vpc_zone_identifier       = [aws_subnet.prod-public-1.id, aws_subnet.prod-public-2.id]
   launch_configuration      = aws_launch_configuration.example-launchconfig.name
   min_size                  = 1
   max_size                  = 2
